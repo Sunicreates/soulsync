@@ -1,0 +1,211 @@
+@import './tailwind.css';
+
+/* Custom Component Styles */
+
+/* Button Styles */
+.btn-primary {
+  @apply bg-gradient-to-r from-primary to-primary-600 text-white font-medium py-3 px-6 rounded-xl hover:from-primary-600 hover:to-primary-700 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 shadow-sm hover:shadow-md disabled:opacity-50 disabled:cursor-not-allowed;
+}
+
+.btn-secondary {
+  @apply bg-gradient-to-r from-secondary to-secondary-600 text-white font-medium py-3 px-6 rounded-xl hover:from-secondary-600 hover:to-secondary transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-secondary-500 focus:ring-offset-2 shadow-sm hover:shadow-md disabled:opacity-50 disabled:cursor-not-allowed;
+}
+
+.btn-outline {
+  @apply border-2 border-primary text-primary font-medium py-3 px-6 rounded-xl hover:bg-primary hover:text-white transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed;
+}
+
+.btn-ghost {
+  @apply text-text-primary hover:bg-background/80 font-medium py-3 px-6 rounded-xl transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed;
+}
+
+/* Form Input Styles */
+.input-field {
+  @apply w-full px-4 py-3 border border-border rounded-xl bg-surface text-text-primary placeholder-text-tertiary focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed;
+}
+
+.input-field:focus {
+  @apply ring-2 ring-primary-500 border-primary;
+}
+.input-field.error  {
+  @apply border-error;
+}
+
+/* Card Styles */
+.card {
+  @apply bg-surface rounded-2xl shadow-sm border border-border p-6;
+}
+
+.card-hover {
+  @apply card hover:shadow-md hover:border-border-light transition-all duration-200 cursor-pointer;
+}
+
+/* Animation Classes */
+.animation-fade-in {
+  animation: fadeIn 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.animation-slide-in {
+  animation: slideIn 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.animation-scale-in {
+  animation: scaleIn 200ms ease-out;
+}
+
+/* Text Styles */
+.text-gradient {
+  @apply bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent;
+}
+
+.text-gradient-accent {
+  @apply bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent;
+}
+
+/* Layout Helpers */
+.container-padding {
+  @apply px-4 sm:px-6 lg:px-8;
+}
+
+.section-padding {
+  @apply py-16 lg:py-24;
+}
+
+/* Professional Color Scheme Utilities */
+.bg-profession-developer {
+  @apply bg-gradient-to-br from-blue-500 to-cyan-500;
+}
+
+.bg-profession-doctor {
+  @apply bg-gradient-to-br from-green-500 to-emerald-500;
+}
+
+.bg-profession-founder {
+  @apply bg-gradient-to-br from-purple-500 to-violet-500;
+}
+
+.text-profession-developer {
+  @apply text-blue-600;
+}
+
+.text-profession-doctor {
+  @apply text-green-600;
+}
+
+.text-profession-founder {
+  @apply text-purple-600;
+}
+
+/* Scrollbar Styles */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Focus visible for accessibility */
+.focus-visible:focus {
+  @apply outline-none ring-2 ring-primary-500 ring-offset-2;
+}
+
+/* Loading Spinner */
+.loading-spinner {
+  @apply animate-spin rounded-full border-2 border-border border-t-primary;
+}
+
+/* Custom z-index values */
+.z-modal {
+  z-index: 1000;
+}
+
+.z-dropdown {
+  z-index: 100;
+}
+
+.z-header {
+  z-index: 50;
+}
+
+/* Professional status indicators */
+.status-online {
+  @apply bg-success w-3 h-3 rounded-full border-2 border-surface;
+}
+
+.status-away {
+  @apply bg-warning w-3 h-3 rounded-full border-2 border-surface;
+}
+
+.status-offline {
+  @apply bg-border w-3 h-3 rounded-full border-2 border-surface;
+}
+
+/* Match quality indicators */
+.match-high {
+  @apply bg-gradient-to-r from-success to-green-400;
+}
+
+.match-medium {
+  @apply bg-gradient-to-r from-warning to-yellow-400;
+}
+
+.match-low {
+  @apply bg-gradient-to-r from-error to-red-400;
+}
+
+/* Professional verification badge */
+.verified-badge {
+  @apply bg-primary text-white text-xs px-2 py-1 rounded-full font-medium;
+}
+
+/* Smooth transitions for all interactive elements */
+* {
+  @apply transition-colors duration-200;
+}
+
+/* Dark mode preparation (for future implementation) */
+@media (prefers-color-scheme: dark) {
+  /* Dark mode styles will be added here when implementing dark theme */
+}
+
+/* Print styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .btn-primary {
+    @apply border-2 border-black;
+  }
+  
+  .input-field {
+    @apply border-2 border-black;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Inter;
+}
+
+* {
+  box-sizing: border-box;
+  line-height: normal;
+  font-family: inherit;
+  margin: unset;
+}
